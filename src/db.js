@@ -3,7 +3,7 @@ import { DB_HOST,
     DB_USER,
     DB_PASSWORD,
     DB_NAME,
-    DB_PORT } from "./config"
+    DB_PORT } from "./config.js"
 
 export const connectMysql = createPool({
     user: DB_USER,

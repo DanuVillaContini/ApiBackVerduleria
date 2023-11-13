@@ -1,6 +1,6 @@
 import express from "express";
-import {connectMysql} from './constants/db.js'
-import {PORT} from "./constants/config.js"
+import {connectMysql} from './db.js'
+import {PORT} from "./config.js"
 
 const app = express()
 
