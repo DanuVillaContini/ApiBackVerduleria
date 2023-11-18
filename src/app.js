@@ -3,6 +3,7 @@ import morgan from "morgan";
 
 import EmpleadosRoutes from "./routes/empleados.routes.js"
 import IndexRoutes from "./routes/index.routes.js"
+import ProveedoresRoutes from "./routes/proveedores.routes.js"
 
 const app = express()
 
@@ -13,6 +14,7 @@ app.use(express.json())
 //Routes
 app.use(IndexRoutes)
 app.use('/api', EmpleadosRoutes)
+app.use('/proveedores', ProveedoresRoutes)
 
 
 app.use((req, res, next) => {
