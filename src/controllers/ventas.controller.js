@@ -16,7 +16,7 @@ export const getVentasId = async (req, res) => {
         const [rows, fields] = await connectMysql.query(`
             SELECT ventas.*, clientes.name_apellido as venta_nameCliente FROM ventas 
             JOIN clientes ON ventas.clientes_id = clientes.id
-            WHERE ventas.id = ?  -- Cambiado de num_venta a id
+            WHERE ventas.id = ? 
         `, [id]);
 
         if (rows.length <= 0) {
