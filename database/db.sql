@@ -67,11 +67,12 @@ CREATE TABLE IF NOT EXISTS acreedores (
     id INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     clientes_id INT(8) NOT NULL,
     ventas_id INT(8) NOT NULL,
-    total_deudor DECIMAL(10,2) NOT NULL,
+    total_deudor DECIMAL(10,2) NULL,
     FOREIGN KEY (clientes_id) REFERENCES clientes(id),
     FOREIGN KEY (ventas_id) REFERENCES ventas(id)
 );
 
+-- ALTER TABLE acreedores MODIFY total_deudor DECIMAL(10,2) NULL;
 
 
 

@@ -3,7 +3,7 @@ import { connectMysql } from "../db.js"
 
 export const getPedidos = async (req, res) => {
     try {
-        const [rows] = await connectMysql.query("SELECT * FROM pedidos");
+        const [rows] = await connectMysql.query("SELECT pedidos.*, clientes.name_apellido as clientes_id FROM pedidos JOIN clientes ON pedidos.clientes_id = clientes.id");
         res.json(rows);
     } catch (error) {
         return res.status(500).json({ message: "Ups, algo salio mal" });
