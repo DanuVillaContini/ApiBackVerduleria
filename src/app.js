@@ -10,15 +10,20 @@ import ClientesRoutes from "./routes/clientes.routes.js"
 import VentasRoutes from "./routes/ventas.routes.js"
 import PedidosRoutes from "./routes/pedidos.routes.js"
 import AcreedoresRoutes from "./routes/acreedores.routes.js"
-
 import cors from 'cors';
 
 const app = express()
-app.use(cors())
+
+const whiteList = ['http://localhost:3000', 'http://localhost:5173', 'https://sistemaback-production-fe30.up.railway.app']
+
+
 
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json())
+app.use(cors({
+    origin: whiteList
+}))
 
 //Routes
 app.use(IndexRoutes)
