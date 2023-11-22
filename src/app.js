@@ -11,8 +11,10 @@ import VentasRoutes from "./routes/ventas.routes.js"
 import PedidosRoutes from "./routes/pedidos.routes.js"
 import AcreedoresRoutes from "./routes/acreedores.routes.js"
 
+import cors from 'cors';
 
 const app = express()
+app.use(cors())
 
 // Middlewares
 app.use(morgan("dev"));
