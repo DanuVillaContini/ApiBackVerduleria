@@ -13,9 +13,17 @@ SELECT * FROM clientes;
 SELECT * FROM ventas;
 SELECT * FROM pedidos;
 SELECT * FROM acreedores;
+SELECT * FROM usuarios;
 
 
 
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nameUser VARCHAR(255) NOT NULL,
+    correoUser VARCHAR(255) NOT NULL,
+    pass VARCHAR(255) NOT NULL
+);
 
 -- CREATE TABLE IF NOT EXISTS empleados (
 --     id INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
